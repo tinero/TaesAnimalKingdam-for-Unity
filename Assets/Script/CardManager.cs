@@ -17,6 +17,8 @@ public class CardManager : MonoBehaviour
     private List<string> Image = new List<string>();
     private List<object> Ability = new List<object>();
 
+    private List<int> sortId = new List<int>();
+
     public Text cardPower1;
     public Text cardPower2;
     public Text cardPower3;
@@ -56,18 +58,20 @@ public class CardManager : MonoBehaviour
     private void Awake()
     {
         AllFindCard();
-
+        Debug.Log("Id"+string.Join(",", Id));
+        Debug.Log("Power"+string.Join(",", Power));
+        SortList();
+        Debug.Log(string.Join(",", Power));
         preDeck = Resources.Load<DeckOrigin>("DeckList/Deck1");
         preDeck.deckName = "testDeck1";
 
     }
     void Start()
     {
+        Debug.Log(string.Join(",", Id));
         SetCard();
         pageMax = Id.Count - 6;
         pageMin = Id.Min();
-        Debug.Log("pageMax " + pageMax);
-        Debug.Log("pageMin " + pageMin);
     }
 
     void Update()
@@ -95,6 +99,7 @@ public class CardManager : MonoBehaviour
 
             //各クラスのプロパティを取得し各Listに追加
             Id.Add((int)card.InvokeMember("Id", BindingFlags.GetProperty, null, getCard, null));
+            sortId.Add((int)card.InvokeMember("Id", BindingFlags.GetProperty, null, getCard, null));
             Group.Add((string)card.InvokeMember("CardGroup", BindingFlags.GetProperty, null, getCard, null));
             Image.Add((string)card.InvokeMember("CardImage", BindingFlags.GetProperty, null, getCard, null));
             Name.Add((string)card.InvokeMember("CardName", BindingFlags.GetProperty, null, getCard, null));
@@ -104,9 +109,8 @@ public class CardManager : MonoBehaviour
 
         }
 
+        sortId.Sort();
 
-        Debug.Log("getAllCard " + getAllCard.Length);
-        Debug.Log("Id " + Id.Count);
     }
 
     /// <summary>
@@ -114,15 +118,47 @@ public class CardManager : MonoBehaviour
     /// </summary>
     private void SortList()
     {
-        List<int> sortId = new List<int>(Id.Count-1);
-        List<int> sortPower = new List<int>(Id.Count - 1);
-        List<string> sortName = new List<string>(Id.Count - 1);
-        List<string> sortGroup = new List<string>(Id.Count - 1);
-        List<string> sortType = new List<string>(Id.Count - 1);
-        List<string> sortImage = new List<string>(Id.Count - 1);
-        List<object> sortAbility = new List<object>(Id.Count - 1);
+        List<int> sortPower = new List<int>();
+        List<string> sortName = new List<string>();
+        List<string> sortGroup = new List<string>();
+        List<string> sortType = new List<string>();
+        List<string> sortImage = new List<string>();
+        List<object> sortAbility = new List<object>();
 
-        // a.Add(i);追加する時のやつ
+        //sortListに追加
+        for (int i = 0; i < Id.Count; i++)
+        {
+            Debug.Log("Id" + string.Join(",", Id));
+            Debug.Log("sortId" + string.Join(",", sortId));
+
+            for (int j = 0; j < Id.Count; j++)
+            {
+                if (sortId[i] == Id[j])
+                {
+                    sortPower.Add(Power[j]);
+                    sortName.Add(Name[j]);
+                    sortGroup.Add(Group[j]);
+                    sortType.Add(Type[j]);
+                    sortImage.Add(Image[j]);
+                    sortAbility.Add(Ability[j]);
+
+                    Debug.Log(sortId[i]);
+                    Debug.Log(Id[j]);
+                    Debug.Log(Power[j]);
+
+                    break;
+                }
+            }
+        }
+        //sortListの中身をListに追加
+        Id = sortId;
+        Power = sortPower;
+        Name = sortName;
+        Group = sortGroup;
+        Type = sortType;
+        Image = sortImage;
+        Ability = sortAbility;
+
     }
 
 
@@ -156,15 +192,13 @@ public class CardManager : MonoBehaviour
         typeImage.Add(typeImage5);
         typeImage.Add(typeImage6);
 
-
-        Debug.Log("Id " + Id.Count);
-        Debug.Log("powerList " + powerList.Length);
-
         int firstCard = firstKey;
+
+        Debug.Log(string.Join(",", Id));
         //選択部にセット
         for (int i = 0; i < 6; i++)
         {
-
+            //表示場所を指定
             this.cardPower[i] = GameObject.Find(powerList[i]).GetComponent<Text>();
             this.typeImage[i] = GameObject.Find(typeList[i]).GetComponent<Image>();
             this.cardImage[i] = GameObject.Find(cardList[i]).GetComponent<Image>();
@@ -178,7 +212,7 @@ public class CardManager : MonoBehaviour
         firstKey = firstCard;
     }
 
-    
+
 }
 
 
