@@ -6,18 +6,19 @@ using UnityEngine;
 public class SetDeck : ScriptableObject
 {
     public string deckName = "SetDeck";
-    public int power1 = 1;
-    public int power2 = 2;
-    public int power3 = 3;
-    public int power4 = 4;
-    public int power5 = 5;
-    public int power6 = 6;
-    public int power7 = 7;
-    public int power8 = 8;
-    public int power9 = 9;
-    public int power10 = 10;
-    public int power11 = 11;
-    public int power12 = 12;
+    //power=ƒNƒ‰ƒX‚Ì–¼‘O
+    public string power1 = "MouseInBag";
+    public string power2 = "TatteredBear";
+    public string power3 = "HurtLion";
+    public string power4 = "CatPolice";
+    public string power5 = "DoctorMole";
+    public string power6 = "DoctorDog";
+    public string power7 = "DoctorGoat";
+    public string power8 = "DoctorOwl";
+    public string power9 = "DogPolice";
+    public string power10 = "LionMinister";
+    public string power11 = "LionQueen";
+    public string power12 = "LionKing";
 
-    public int setDeckId;
+    public string setDeckName="deck1";
 }

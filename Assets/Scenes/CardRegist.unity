@@ -242,6 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161198051}
   - component: {fileID: 161198052}
+  - component: {fileID: 161198053}
   m_Layer: 0
   m_Name: CardManager
   m_TagString: Untagged
@@ -293,10 +294,31 @@ MonoBehaviour:
   typeImage4: {fileID: 1347691666}
   typeImage5: {fileID: 2111487935}
   typeImage6: {fileID: 1081499159}
-  firstKey: 0
-  pageMove: 0
-  pageMax: 0
-  pageMin: 0
+--- !u!114 &161198053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161198050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d83c88c2ac9db409196186dbfbd494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setCardImage1: {fileID: 0}
+  setCardImage2: {fileID: 0}
+  setCardImage3: {fileID: 0}
+  setCardImage4: {fileID: 0}
+  setCardImage5: {fileID: 0}
+  setCardImage6: {fileID: 0}
+  setCardImage7: {fileID: 0}
+  setCardImage8: {fileID: 0}
+  setCardImage9: {fileID: 0}
+  setCardImage10: {fileID: 0}
+  setCardImage11: {fileID: 0}
+  setCardImage12: {fileID: 0}
+  preSelectDeck: {fileID: 0}
 --- !u!1 &170334603
 GameObject:
   m_ObjectHideFlags: 0

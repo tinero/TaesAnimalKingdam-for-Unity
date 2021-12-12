@@ -12,14 +12,13 @@ public class NextPageScript : MonoBehaviour
     void Start()
     {
         //CardManagerを取得
-        manager = GameObject.Find("CardManager");
-        cardManager = manager.GetComponent<CardManager>();
+        manager = GameObject.Find("CardManager");//GameObjectのCardManagerを追加
+        cardManager = manager.GetComponent<CardManager>();//CardManagerのスクリプトを追加
 
         //現在のボタンを取得
         nextButton = GetComponent<Button>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (cardManager.firstKey >= cardManager.pageMax)

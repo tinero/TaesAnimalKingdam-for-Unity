@@ -45,23 +45,22 @@ public class CardManager : MonoBehaviour
     private string[] cardList = new string[] { "SetCard1", "SetCard2", "SetCard3", "SetCard4", "SetCard5", "SetCard6" };
     private string[] powerList = new string[] { "setPower1", "setPower2", "setPower3", "setPower4", "setPower5", "setPower6" };
     private string[] typeList = new string[] { "setType1", "setType2", "setType3", "setType4", "setType5", "setType6" };
-    public int firstKey = 0;//選択部の最も左のカードの場所を指定
+    [NonSerialized] public int firstKey = 0;//選択部の最も左のカードの場所を指定
 
-    public bool pageMove = false;//pageの切り替え用
+    [NonSerialized] public bool pageMove = false;//pageの切り替え用
 
-    public int pageMax;
-    public int pageMin;
+    [NonSerialized] public int pageMax;
+    [NonSerialized] public int pageMin;
 
     private DeckOrigin preDeck;
+    private SelectDeck preSelectDeck;//選択されているデッキ
 
 
     private void Awake()
     {
+        preSelectDeck = Resources.Load<SelectDeck>("Decklist/preSelectDeck");
         AllFindCard();
-        Debug.Log("Id"+string.Join(",", Id));
-        Debug.Log("Power"+string.Join(",", Power));
         SortList();
-        Debug.Log(string.Join(",", Power));
         preDeck = Resources.Load<DeckOrigin>("DeckList/Deck1");
         preDeck.deckName = "testDeck1";
 
@@ -94,6 +93,8 @@ public class CardManager : MonoBehaviour
         {
             /*objectをtypeに変換*/
             var card = getAllCard[i].GetType();
+
+            Debug.Log("0cardType0 "+card);
             /*インスタンスを生成*/
             var getCard = gameObject.AddComponent(card);
 

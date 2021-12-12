@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckId: 10
   deckName: deckOrigin
-  power1: 1
-  power2: 2
-  power3: 3
-  power4: 4
-  power5: 5
-  power6: 6
-  power7: 7
-  power8: 8
-  power9: 9
-  power10: 10
-  power11: 11
-  power12: 12
+  power1: MouseInBag
+  power2: TatteredBear
+  power3: HurtLion
+  power4: CatPolice
+  power5: DoctorMole
+  power6: DoctorDog
+  power7: DoctorGoat
+  power8: DoctorOwl
+  power9: DogPolice
+  power10: LionMinister
+  power11: LionQueen
+  power12: LionKing
