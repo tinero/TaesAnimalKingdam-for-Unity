@@ -1,17 +1,14 @@
-﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Script.Card
 {
-    public class MouseInBag: MonoBehaviour, ICard
+    public class TestPower10 : MonoBehaviour, ICard
     {
         public int Id
         {
-            get { return 1; }
+            get { return 22; }
         }
         public object CardAbility
         {
@@ -20,28 +17,27 @@ namespace Assets.Script.Card
 
         public string CardGroup
         {
-            get { return "classic"; }
+            get { return "test"; }
         }
 
         public string CardImage
         {
-            get { return "CardImage/MouseInBag"; }
+            get { return "CardImage/TestPower10"; }
         }
 
         public string CardName
         {
-            get { return "MouseInBag"; }
+            get { return "TestPower10"; }
         }
 
         public int CardPower
         {
-            get { return 1; }
+            get { return 10; }
         }
 
         public string CardType
         {
-            get { return "OtherImage/Low"; }
+            get { return "OtherImage/High"; }
         }
-
     }
 }

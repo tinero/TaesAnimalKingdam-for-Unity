@@ -34,7 +34,7 @@ namespace Assets.Script.Card
 
         public string CardName
         {
-            get { return "ライオンの王様"; }
+            get { return "LionKing"; }
         }
 
         public int CardPower
