@@ -1669,3 +1669,4 @@ Received Import Request.
 Start importing Assets/Resources/CardImage/仮デザイン.png using Guid(c0869ee6ca7e0b24e9e57161c71ffecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1d45e7994382bae5cc6f7b77d1f9e5c') in 0.199894 seconds 
   Import took 0.221596 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
