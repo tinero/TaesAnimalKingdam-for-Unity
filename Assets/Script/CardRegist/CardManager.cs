@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Assets.Script.Card;
 using System.Reflection;
+using UnityEditor;
 
 public class CardManager : MonoBehaviour
 {
@@ -233,6 +234,15 @@ public class CardManager : MonoBehaviour
         classPower6 = classPowerList[5];
 
         firstKey = firstCard;
+    }
+
+    public void RegistDeck()
+    {
+        //•ÏX‚ğ‹L˜^
+        EditorUtility.SetDirty(preSelectDeck);
+
+        //•Û‘¶‚·‚é
+        AssetDatabase.SaveAssets();
     }
 
 
