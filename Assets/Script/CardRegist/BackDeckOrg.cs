@@ -15,7 +15,7 @@ public class BackDeckOrg : MonoBehaviour
     /// </summary>
     public void RegistDeck()
     {
-        preSelectDeck = Resources.Load<SelectDeck>("DeckList/preSelectDeck");
+        preSelectDeck = Resources.Load<SelectDeck>(preSelectDeck.selectDeckName);
         //ïœçXÇãLò^
         EditorUtility.SetDirty(preSelectDeck);
 

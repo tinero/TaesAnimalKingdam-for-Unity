@@ -77,8 +77,7 @@ public class CardManager : MonoBehaviour
         preSelectDeck = Resources.Load<SelectDeck>("Decklist/preSelectDeck");
         AllFindCard();
         SortList();
-        preDeck = Resources.Load<DeckOrigin>("DeckList/Deck1");
-        preDeck.deckName = "testDeck1";
+        preDeck = Resources.Load<DeckOrigin>(preSelectDeck.selectDeckName);
 
     }
     void Start()
@@ -238,6 +237,8 @@ public class CardManager : MonoBehaviour
 
     public void RegistDeck()
     {
+
+
         //ïœçXÇãLò^
         EditorUtility.SetDirty(preSelectDeck);
 
