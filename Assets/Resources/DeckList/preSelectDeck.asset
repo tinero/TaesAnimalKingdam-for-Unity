@@ -25,4 +25,4 @@ MonoBehaviour:
   power10: LionMinister
   power11: LionQueen
   power12: LionKing
-  selectDeckName: deck1
+  selectDeckName: DeckList/Deck1

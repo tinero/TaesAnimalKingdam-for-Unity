@@ -25,4 +25,4 @@ MonoBehaviour:
   power10: LionMinister
   power11: LionQueen
   power12: LionKing
-  setDeckId: 0
+  setDeckName: DeckList/Deck1

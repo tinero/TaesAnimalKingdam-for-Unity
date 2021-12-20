@@ -26,12 +26,14 @@ public class CardManager : MonoBehaviour
     public Text cardPower4;
     public Text cardPower5;
     public Text cardPower6;
+
     public Image cardImage1;
     public Image cardImage2;
     public Image cardImage3;
     public Image cardImage4;
     public Image cardImage5;
     public Image cardImage6;
+
     public Image typeImage1;
     public Image typeImage2;
     public Image typeImage3;
@@ -45,6 +47,7 @@ public class CardManager : MonoBehaviour
     public string className4;
     public string className5;
     public string className6;
+
     public int classPower1;
     public int classPower2;
     public int classPower3;
@@ -235,16 +238,6 @@ public class CardManager : MonoBehaviour
         firstKey = firstCard;
     }
 
-    public void RegistDeck()
-    {
-
-
-        //ïœçXÇãLò^
-        EditorUtility.SetDirty(preSelectDeck);
-
-        //ï€ë∂Ç∑ÇÈ
-        AssetDatabase.SaveAssets();
-    }
 
 
 }

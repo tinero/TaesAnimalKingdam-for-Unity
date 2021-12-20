@@ -21,7 +21,7 @@ public class GetSetCard : MonoBehaviour
     [SerializeField] private Image setCardImage11;
     [SerializeField] private Image setCardImage12;
 
-    [NonSerialized] public List<Image> setCardImage=new List<Image>();
+    [NonSerialized] public List<Image> setCardImage = new List<Image>();
 
     [NonSerialized] public string[] cardName = new string[12];
 
@@ -80,20 +80,36 @@ public class GetSetCard : MonoBehaviour
             tClass[i] = Type.GetType("Assets.Script.Card." + cardName[i]);
             powerClass[i] = gameObject.AddComponent(tClass[i]);
             this.setCardImage[i] = GameObject.Find("Power" + (i + 1).ToString()).GetComponent<Image>();
-            setCardImage[i].sprite= Resources.Load<Sprite>((string)tClass[i].InvokeMember("CardImage", BindingFlags.GetProperty, null, powerClass[i], null));
+            setCardImage[i].sprite = Resources.Load<Sprite>((string)tClass[i].InvokeMember("CardImage", BindingFlags.GetProperty, null, powerClass[i], null));
         }
 
 
 
-        
+
     }
 
-    public void UpdateCard(int i,string name)
+    public void UpdateCard(int i, string name)
     {
         tClass[i] = Type.GetType("Assets.Script.Card." + name);
         powerClass[i] = gameObject.AddComponent(tClass[i]);
         this.setCardImage[i] = GameObject.Find("Power" + (i + 1).ToString()).GetComponent<Image>();
         setCardImage[i].sprite = Resources.Load<Sprite>((string)tClass[i].InvokeMember("CardImage", BindingFlags.GetProperty, null, powerClass[i], null));
+    }
+
+    public void Regist()
+    {
+        preSelectDeck.power1 = cardName[0];
+        preSelectDeck.power2 = cardName[1];
+        preSelectDeck.power3 = cardName[2];
+        preSelectDeck.power4 = cardName[3];
+        preSelectDeck.power5 = cardName[4];
+        preSelectDeck.power6 = cardName[5];
+        preSelectDeck.power7 = cardName[6];
+        preSelectDeck.power8 = cardName[7];
+        preSelectDeck.power9 = cardName[8];
+        preSelectDeck.power10 = cardName[9];
+        preSelectDeck.power11 = cardName[10];
+        preSelectDeck.power12 = cardName[11];
     }
 
 }

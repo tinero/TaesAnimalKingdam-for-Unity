@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GetDeck : MonoBehaviour
 {
     private SelectDeck preSelectDeck;
-    private SelectDeck preSetDeck;
+    private SetDeck preSetDeck;
 
 
     private DeckOrigin[] Deck = new DeckOrigin[12];
@@ -19,11 +19,13 @@ public class GetDeck : MonoBehaviour
     private void Awake()
     {
         preSelectDeck = Resources.Load<SelectDeck>("DeckList/preSelectDeck");
-        preSetDeck = Resources.Load<SelectDeck>("DeckList/preSetDeck");
-
+        preSetDeck = Resources.Load<SetDeck>("DeckList/preSetDeck");
+        Debug.Log(preSetDeck);
         for (int i = 0; i < Deck.Length; i++)
         {
+
             Deck[i] = Resources.Load<DeckOrigin>("DeckList/Deck" + (i + 1).ToString());
+            Debug.Log(Deck[i]);
         }
 
     }
@@ -200,11 +202,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[0].power11;
         preSetDeck.power12 = Deck[0].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -225,11 +227,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[1].power11;
         preSetDeck.power12 = Deck[1].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -250,11 +252,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[2].power11;
         preSetDeck.power12 = Deck[2].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -275,11 +277,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[3].power11;
         preSetDeck.power12 = Deck[3].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -300,11 +302,12 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[4].power11;
         preSetDeck.power12 = Deck[4].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
+
     }
 
     /// <summary>
@@ -325,11 +328,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[5].power11;
         preSetDeck.power12 = Deck[5].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -350,11 +353,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[6].power11;
         preSetDeck.power12 = Deck[6].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -375,11 +378,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[7].power11;
         preSetDeck.power12 = Deck[7].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -400,11 +403,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[8].power11;
         preSetDeck.power12 = Deck[8].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -425,11 +428,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[9].power11;
         preSetDeck.power12 = Deck[9].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -450,11 +453,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[10].power11;
         preSetDeck.power12 = Deck[10].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
     /// <summary>
@@ -475,11 +478,11 @@ public class GetDeck : MonoBehaviour
         preSetDeck.power11 = Deck[11].power11;
         preSetDeck.power12 = Deck[11].power12;
 
-        //変更を記録
-        EditorUtility.SetDirty(preSetDeck);
 
-        //保存する
-        AssetDatabase.SaveAssets();
+
+
+
+
     }
 
 
