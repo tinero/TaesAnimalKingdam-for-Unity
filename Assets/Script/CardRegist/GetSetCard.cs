@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GetSetCard : MonoBehaviour
@@ -83,6 +84,8 @@ public class GetSetCard : MonoBehaviour
             setCardImage[i].sprite = Resources.Load<Sprite>((string)tClass[i].InvokeMember("CardImage", BindingFlags.GetProperty, null, powerClass[i], null));
         }
 
+        //Deck1に値が挿入されていないと考えられるのでRegist部分をGetSetCardクラスに作る
+
 
 
 
@@ -110,6 +113,12 @@ public class GetSetCard : MonoBehaviour
         preSelectDeck.power10 = cardName[9];
         preSelectDeck.power11 = cardName[10];
         preSelectDeck.power12 = cardName[11];
+
+        SceneManager.LoadScene("DeckOrg");
+
+
     }
+
+
 
 }
